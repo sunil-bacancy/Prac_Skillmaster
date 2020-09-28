@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Prac_Skillmaster</string>
+    <string name="facebook_app_id">999664463819105</string>
+    <string name="fb_login_protocol_scheme">fb999664463819105</string>
+</resources>
