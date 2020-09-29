@@ -16,31 +16,31 @@ const list_Data = [
         title: 'Basketball',
         icon_img: AppImages.basketball,
     },
-    {
-        user_skill_map_id: 2,
-        title: 'Baseball',
-        icon_img: AppImages.baseball,
-    },
-    {
-        user_skill_map_id: 3,
-        title: 'Swimming',
-        icon_img: AppImages.swimming,
-    },
-    {
-        user_skill_map_id: 4,
-        title: 'Batminton',
-        icon_img: AppImages.batminton,
-    },
-    {
-        user_skill_map_id: 5,
-        title: 'Test skill',
-        icon_img: AppImages.testskill,
-    },
-    {
-        user_skill_map_id: 6,
-        title: 'Soccer',
-        icon_img: AppImages.soccor
-    },
+    // {
+    //     user_skill_map_id: 2,
+    //     title: 'Baseball',
+    //     icon_img: AppImages.baseball,
+    // },
+    // {
+    //     user_skill_map_id: 3,
+    //     title: 'Swimming',
+    //     icon_img: AppImages.swimming,
+    // },
+    // {
+    //     user_skill_map_id: 4,
+    //     title: 'Batminton',
+    //     icon_img: AppImages.batminton,
+    // },
+    // {
+    //     user_skill_map_id: 5,
+    //     title: 'Test skill',
+    //     icon_img: AppImages.testskill,
+    // },
+    // {
+    //     user_skill_map_id: 6,
+    //     title: 'Soccer',
+    //     icon_img: AppImages.soccor
+    // },
 ]
 
 class SkillScreen extends Component {

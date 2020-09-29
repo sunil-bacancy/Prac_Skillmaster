@@ -28,6 +28,7 @@ import FamilyManagementScreen from './container/MainContainer/FamilyManagementSc
 import AddFamilyMember from './container/MainContainer/AddFamilyMember';
 import FamilyAccountSettings from './container/MainContainer/FamilyAccountSettings';
 import TrophyScreen from './container/MainContainer/TrophyScreen';
+import LessonsScreen from './container/MainContainer/LessonsScreen';
 
 class Routers extends Component {
     constructor(props) {
@@ -55,6 +56,7 @@ class Routers extends Component {
                 {/* <Scene key='verifyotp' component={VerifyOTPScreen} hideNavBar={true}></Scene> */}
                 {/* <Scene key='setnewpassword' component={SetNewPasswordScreen} hideNavBar={true} ></Scene> */}
                 <Scene key='trophy' component={TrophyScreen} hideNavBar={true}></Scene>
+                <Scene key='lessons' component={LessonsScreen} hideNavBar={true}></Scene>
                 <Scene hideNavBar panHandlers={null}>
                     <Tabs>
                         {/* key="dashboard"

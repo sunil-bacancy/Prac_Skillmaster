@@ -15,7 +15,12 @@ const AppImages = {
     product_basketball: require('./product_basketball.jpg'),
     product_net: require('./product_net.jpg'),
     learning_rules: require('./learning_rules.png'),
-    dribble_passing51: require('./dribble_passing51.png'),
+    dribble_passing: require('./dribble_passing.png'),
+    shooting1: require('./shooting1.png'),
+    playing_defense: require('./playing_defense.png'),
+    playing_well4: require('./playing_well4.png'),
+    basketball_variations1: require('./basketball_variations1.png'),
+    basketball_test1: require('./basketball_test1.png'),
 }
 
 module.exports = AppImages;
