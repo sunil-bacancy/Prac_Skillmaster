@@ -29,6 +29,7 @@ import AddFamilyMember from './container/MainContainer/AddFamilyMember';
 import FamilyAccountSettings from './container/MainContainer/FamilyAccountSettings';
 import TrophyScreen from './container/MainContainer/TrophyScreen';
 import LessonsScreen from './container/MainContainer/LessonsScreen';
+import LessonsDetailScreen from './container/MainContainer/LessonDetailScreen';
 
 class Routers extends Component {
     constructor(props) {
@@ -46,7 +47,7 @@ class Routers extends Component {
                 <Scene key='skills' component={SkillScreen} hideNavBar={true}></Scene>
                 {/* <Scene key='learnskills' component={LearnSkillScreen} hideNavBar={true}></Scene> */}
                 {/* <Scene key='privacypolicy' component={PrivacyPolicyScreen} hideNavBar={true}></Scene> */}
-                {/* <Scene key='store' component={StoreScreen} hideNavBar={true} initials></Scene> */}
+                {/* <Scene key='stsore' component={StoreScreen} hideNavBar={true} initials></Scene> */}
                 {/* <Scene key="personalrecords" component={PersonalRecordsScreen} hideNavBar={true}></Scene> */}
                 {/* <Scene key="familymanagement" component={FamilyManagementScreen} hideNavBar={true}></Scene> */}
                 {/* <Scene key='coacheslessons' component={CoachesLessonsScreen} hideNavBar={true}></Scene> */}
@@ -57,6 +58,7 @@ class Routers extends Component {
                 {/* <Scene key='setnewpassword' component={SetNewPasswordScreen} hideNavBar={true} ></Scene> */}
                 <Scene key='trophy' component={TrophyScreen} hideNavBar={true}></Scene>
                 <Scene key='lessons' component={LessonsScreen} hideNavBar={true}></Scene>
+                <Scene key='lessondetail' component={LessonsDetailScreen} hideNavBar={true}></Scene>
                 <Scene hideNavBar panHandlers={null}>
                     <Tabs>
                         {/* key="dashboard"

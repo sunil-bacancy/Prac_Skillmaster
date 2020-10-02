@@ -10,49 +10,91 @@ import { Actions } from 'react-native-router-flux';
 
 const SPORTS_LIST = [
     {
+        id: 1,
         sports_img: AppImages.learning_rules,
         title: 'Learning the Rules',
     },
     {
+        id: 2,
         sports_img: AppImages.dribble_passing,
         title: 'Dribbling and Passing',
     },
     {
+        id: 3,
         sports_img: AppImages.shooting1,
         title: 'Shooting',
     },
     {
+        id: 4,
         sports_img: AppImages.playing_defense,
         title: 'Playing Defense',
     },
     {
+        id: 5,
         sports_img: AppImages.playing_well4,
         title: 'Playing Well',
     },
     {
+        id: 6,
         sports_img: AppImages.basketball_variations1,
         title: 'Basketball Variations',
     },
     {
+        id: 7,
         sports_img: AppImages.basketball_test1,
         title: 'Basketball test',
     },
+]
+
+const LESSONS_DATA = [
+    {
+        id: 1,
+        data: [
+            {
+                lesson_id: 1,
+                title: 'Get a ball and a hoop'
+            },
+            {
+                lesson_id: 2,
+                title: 'Break into two teams'
+            },
+        ]
+    },
+    {
+        id: 2,
+        data: [
+            {
+                lesson_id: 1,
+                title: 'Stand correctly'
+            },
+            {
+                lesson_id: 2,
+                title: 'Ball Bouncing'
+            },
+        ]
+    }
 ]
 
 class TrophyScreen extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            sportsData: null
+            sportsData: null,
+            lessonsData2: [],
+            selectedLessonMap: [],
         }
     }
 
     componentDidMount() {
         console.log('ssss--->', this.props.skillMapDetail)
+        var tempArr = LESSONS_DATA;
+        // this.setState({
+        //     lessonsData2: tempArr
+        // })
         this.callGetAllWorkouts()
     }
 
-    callGetAllWorkouts() {
+    callGetAllWorkouts(workoutDetail) {
         const { loader } = this.props;
         Keyboard.dismiss();
         loader(false);
@@ -66,21 +108,40 @@ class TrophyScreen extends Component {
                 : '',
             sportsData: SPORTS_LIST
         }
+
+        // this.state.lessonsData2.forEach((element) => {
+        //     if (element.id === workoutDetail.id) {
+        //         this.setState({
+        //             selectedLessonMap: element.data
+        //         })
+        //     }
+        // })
         this.setState({
             sportsData: workout.sportsData
         })
         loader(false);
     }
 
+    // getLessonId() {
+    //     LESSONS_DATA.filter(i => i.id === SPORTS_LIST.id)
+    //     return LESSONS_DATA.data
+    // }
+
     navigateToLesson = (workoutDetail) => {
+        // this.callGetAllWorkouts(workoutDetail)
+        // const lesson2 = await this.getLessonId();
+        // console.log('selectedLessonMap222 --->', lesson2)
         Actions.lessons({
             workoutDetail: workoutDetail,
             skillMapDetail: this.props.skillMapDetail,
+            // lessonData: LESSONS_DATA
         })
     }
 
     render() {
-        // console.log('Trophy Screen --->', this.state.sportsData)
+        // console.log('Trophy Screen --->', this.state.lessonsData2)
+        // console.log('selectedLessonMap --->', this.state.selectedLessonMap)
+        // this.callGetAllWorkouts()
         return (
             <View style={{ flex: 1 }}>
                 <Header showBackBtn></Header>
