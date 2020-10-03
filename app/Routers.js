@@ -30,6 +30,7 @@ import FamilyAccountSettings from './container/MainContainer/FamilyAccountSettin
 import TrophyScreen from './container/MainContainer/TrophyScreen';
 import LessonsScreen from './container/MainContainer/LessonsScreen';
 import LessonsDetailScreen from './container/MainContainer/LessonDetailScreen';
+import SelectLevelScreen from './container/MainContainer/SelectLevelScreen';
 
 class Routers extends Component {
     constructor(props) {
@@ -56,6 +57,7 @@ class Routers extends Component {
                 {/* <Scene key='enterpassword' component={EnterPasswordScreen} hideNavBar={true}></Scene> */}
                 {/* <Scene key='verifyotp' component={VerifyOTPScreen} hideNavBar={true}></Scene> */}
                 {/* <Scene key='setnewpassword' component={SetNewPasswordScreen} hideNavBar={true} ></Scene> */}
+                <Scene key='selectlevel' component={SelectLevelScreen} hideNavBar={true}></Scene>
                 <Scene key='trophy' component={TrophyScreen} hideNavBar={true}></Scene>
                 <Scene key='lessons' component={LessonsScreen} hideNavBar={true}></Scene>
                 <Scene key='lessondetail' component={LessonsDetailScreen} hideNavBar={true}></Scene>

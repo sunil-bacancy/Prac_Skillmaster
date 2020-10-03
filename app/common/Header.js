@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Image, Text, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Image, Text, TouchableOpacity, Keyboard } from 'react-native';
 import Headericon from 'react-native-vector-icons/Entypo';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -10,19 +10,40 @@ import withLoader from '../redux/actionCreator/withLoader';
 import withUser from '../redux/actionCreator/withUser';
 import { connect } from 'react-redux';
 import AppImages from '../assets/images/index';
+import { setUser } from '../redux/actions/'
 
 class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
             isModelVisible: false,
-            user: {}
+            // user: {}
         }
     }
 
     componentDidMount() {
         const { user } = this.props;
         // console.log('user previous data ---->', user)
+    }
+
+    doLogout = () => {
+        const { loader } = this.props;
+        Keyboard.dismiss();
+        loader(true);
+        const user = {
+            email: this.props.user != null && this.props.user != undefined
+                ? this.props.user.email
+                : '',
+            first_name: this.props.user != null && this.props.user != undefined
+                ? this.props.user.first_name
+                : ''
+        }
+        console.log("Logout Data =====>", user);
+        Actions.reset('login');
+        setTimeout(() => {
+            this.props.setUser(null);
+        }, 200)
+        loader(false);
     }
 
     render() {
@@ -83,7 +104,7 @@ class Header extends Component {
                                 onPress={() => { this.setState({ isModelVisible: false }, Actions.learnskills()) }}>
                                 <Text style={newStyle.headerSubTextStyle}>{'Learn'}</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={() => { }}>
+                            <TouchableOpacity onPress={() => { this.doLogout() }}>
                                 <Text style={newStyle.headerSubTextStyle}>{'Logout'}</Text>
                             </TouchableOpacity>
                         </View>
@@ -94,7 +115,7 @@ class Header extends Component {
     }
 }
 
-export default withUser(Header);
+export default connect(null, { setUser })(withLoader(withUser(Header)));
 
 const newStyle = StyleSheet.create({
     headerStyle: {

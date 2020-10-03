@@ -79,7 +79,11 @@ class SkillScreen extends Component {
 
     navigateToTrophy(skillMapDetail) {
         if (skillMapDetail.user_skill_map_id != null && skillMapDetail.user_skill_map_id != undefined) {
+            // Actions.trophy({ skillMapDetail: skillMapDetail })
+            Actions.selectlevel({ skillMapDetail: skillMapDetail })
+        } else {
             Actions.trophy({ skillMapDetail: skillMapDetail })
+            // Actions.selectlevel({ skillMapDetail: skillMapDetail })
         }
     }
 

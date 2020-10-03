@@ -9,42 +9,42 @@ import withLoader from '../../redux/actionCreator/withLoader';
 import ActionButton from '../../common/ActionButton';
 import { Actions } from 'react-native-router-flux';
 
-const LESSONS_DATA = [
-    {
-        lesson_id: 1,
-        title: 'Get a ball and a hoop'
-    },
-    {
-        lesson_id: 2,
-        title: 'Break into two teams'
-    },
-    // {
-    //     id: 1,
-    //     data: [
-    //         {
-    //             lesson_id: 1,
-    //             title: 'Get a ball and a hoop'
-    //         },
-    //         {
-    //             lesson_id: 2,
-    //             title: 'Break into two teams'
-    //         },
-    //     ]
-    // },
-    // {
-    //     id: 2,
-    //     data: [
-    //         {
-    //             lesson_id: 1,
-    //             title: 'Stand correctly'
-    //         },
-    //         {
-    //             lesson_id: 2,
-    //             title: 'Ball Bouncing'
-    //         },
-    //     ]
-    // }
-]
+// const LESSONS_DATA = [
+// {
+//     lesson_id: 1,
+//     title: 'Get a ball and a hoop'
+// },
+// {
+//     lesson_id: 2,
+//     title: 'Break into two teams'
+// },
+// {
+//     id: 1,
+//     data: [
+//         {
+//             lesson_id: 1,
+//             title: 'Get a ball and a hoop'
+//         },
+//         {
+//             lesson_id: 2,
+//             title: 'Break into two teams'
+//         },
+//     ]
+// },
+// {
+//     id: 2,
+//     data: [
+//         {
+//             lesson_id: 1,
+//             title: 'Stand correctly'
+//         },
+//         {
+//             lesson_id: 2,
+//             title: 'Ball Bouncing'
+//         },
+//     ]
+// }
+// ]
 
 class LessonsScreen extends Component {
     constructor(props) {
@@ -70,12 +70,12 @@ class LessonsScreen extends Component {
     // }
 
     componentDidMount() {
-        console.log('user===>', this.props.user);
+        // console.log('user===>', this.props.user);
         console.log('workDetail===>', this.props.workoutDetail)
-        console.log('selectedLessonMap===>', this.props.lessonsData)
-        var tempArr = LESSONS_DATA;
+        console.log('selectedLessonData===>', this.props.lessonData)
+        // var tempArr = LESSONS_DATA;
         this.setState({
-            lessonsData: tempArr
+            lessonsData: this.props.lessonData
         })
 
         this.callGetAllLessons();
@@ -111,8 +111,8 @@ class LessonsScreen extends Component {
         // }
         // }
         this.setState({
-            lessonsData: LESSONS_DATA,
-            totalLessons: LESSONS_DATA.length,
+            lessonsData: this.props.lessonData,
+            totalLessons: this.props.lessonData.length,
         })
         loader(false);
     }

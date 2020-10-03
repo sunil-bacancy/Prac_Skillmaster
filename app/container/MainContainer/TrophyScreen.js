@@ -87,7 +87,8 @@ class TrophyScreen extends Component {
 
     componentDidMount() {
         console.log('ssss--->', this.props.skillMapDetail)
-        var tempArr = LESSONS_DATA;
+        console.log('userLevel===>', this.props.userLevel)
+        // var tempArr = LESSONS_DATA;
         // this.setState({
         //     lessonsData2: tempArr
         // })
@@ -106,7 +107,8 @@ class TrophyScreen extends Component {
             user_skill_map_id: this.props.skillMapDetail != null && this.props.skillMapDetail != undefined
                 ? this.props.skillMapDetail.user_skill_map_id
                 : '',
-            sportsData: SPORTS_LIST
+            sportsData: SPORTS_LIST,
+            lessonsData2: LESSONS_DATA
         }
 
         // this.state.lessonsData2.forEach((element) => {
@@ -116,25 +118,47 @@ class TrophyScreen extends Component {
         //         })
         //     }
         // })
-        this.setState({
-            sportsData: workout.sportsData
-        })
+
+        var tempArr = [];
+        tempArr = SPORTS_LIST;
+        var element = [];
+        if (this.props.userLevel === 'Beginner') {
+            for (let index = 0; index < tempArr.length; index++) {
+                element.push(tempArr[index])
+            }
+            this.setState({ sportsData: element })
+        } else if (this.props.userLevel === 'Intermediate') {
+            for (let index = 2; index < tempArr.length; index++) {
+                element.push(tempArr[index])
+            }
+            this.setState({ sportsData: element })
+        } else {
+            for (let index = 4; index < tempArr.length; index++) {
+                element.push(tempArr[index])
+            }
+            this.setState({ sportsData: element })
+        }
+
+        // this.setState({
+        //     sportsData: workout.sportsData
+        // })
         loader(false);
     }
 
-    // getLessonId() {
-    //     LESSONS_DATA.filter(i => i.id === SPORTS_LIST.id)
-    //     return LESSONS_DATA.data
-    // }
-
     navigateToLesson = (workoutDetail) => {
         // this.callGetAllWorkouts(workoutDetail)
-        // const lesson2 = await this.getLessonId();
-        // console.log('selectedLessonMap222 --->', lesson2)
+        var lessonData = [];
+        lessonData = LESSONS_DATA;
+        var element = [];
+        for (let index = 0; index < lessonData.length; index++) {
+            if (workoutDetail.id === lessonData[index].id) {
+                element.push(lessonData[index].data)
+            }
+        }
         Actions.lessons({
             workoutDetail: workoutDetail,
             skillMapDetail: this.props.skillMapDetail,
-            // lessonData: LESSONS_DATA
+            lessonData: element
         })
     }
 
