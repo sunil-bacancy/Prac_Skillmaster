@@ -81,7 +81,8 @@ class LessonsScreen extends Component {
         Actions.lessondetail({
             lessonDetail: lessonDetail,
             workoutDetail: this.props.workoutDetail,
-            skillMapDetail: this.props.skillMapDetail
+            skillMapDetail: this.props.skillMapDetail,
+            allLessons: this.props.lessonData
         })
     }
 

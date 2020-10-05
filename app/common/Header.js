@@ -48,6 +48,7 @@ class Header extends Component {
 
     render() {
         const { isModelVisible } = this.state;
+        const { onBackBtnClick } = this.props;
         return (
             <View style={newStyle.headerStyle}>
                 <View style={newStyle.headerViewStyle}>
@@ -58,6 +59,7 @@ class Header extends Component {
                                 // style={{ backgroundColor: 'yellow' }}
                                 name='back'
                                 size={smartScale(5)}
+                                onPress={onBackBtnClick}
                             ></AntDesign>
                         </TouchableOpacity>
                     ) : (

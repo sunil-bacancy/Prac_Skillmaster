@@ -31,6 +31,8 @@ import TrophyScreen from './container/MainContainer/TrophyScreen';
 import LessonsScreen from './container/MainContainer/LessonsScreen';
 import LessonsDetailScreen from './container/MainContainer/LessonDetailScreen';
 import SelectLevelScreen from './container/MainContainer/SelectLevelScreen';
+import LessonTipScreen from './container/MainContainer/LessonTipScreen';
+import LessonCompletedScreen from './container/MainContainer/LessonCompletedScreen';
 
 class Routers extends Component {
     constructor(props) {
@@ -61,6 +63,8 @@ class Routers extends Component {
                 <Scene key='trophy' component={TrophyScreen} hideNavBar={true}></Scene>
                 <Scene key='lessons' component={LessonsScreen} hideNavBar={true}></Scene>
                 <Scene key='lessondetail' component={LessonsDetailScreen} hideNavBar={true}></Scene>
+                <Scene key='lessontip' component={LessonTipScreen} hideNavBar={true}></Scene>
+                <Scene key='lessoncompleted' component={LessonCompletedScreen} hideNavBar={true}></Scene>
                 <Scene hideNavBar panHandlers={null}>
                     <Tabs>
                         {/* key="dashboard"

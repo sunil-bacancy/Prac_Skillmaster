@@ -52,11 +52,25 @@ const LESSONS_DATA = [
         data: [
             {
                 lesson_id: 1,
-                title: 'Get a ball and a hoop'
+                title: 'Get a ball and a hoop',
+                video_url: 'https://www.youtube.com/watch?v=Sm0GgQKySBE',
+                tip_video_url: 'https://www.youtube.com/watch?v=Sm0GgQKySBE',
+                desclaimer: 'get ball',
+                description: 'this section describes about get a ball and hoop',
+                tip_title: 'how to play',
+                tip_desclaimer: 'get ball',
+                lesson_type: 'counter'
             },
             {
                 lesson_id: 2,
-                title: 'Break into two teams'
+                title: 'Break into two teams',
+                video_url: 'https://www.youtube.com/watch?v=EE5UVmfA19s',
+                tip_video_url: 'https://www.youtube.com/watch?v=EE5UVmfA19s',
+                desclaimer: 'create teams',
+                description: 'this section describes about breaking teams',
+                tip_title: 'Team creation',
+                tip_desclaimer: 'team creation',
+                lesson_type: 'counter'
             },
         ]
     },
@@ -65,11 +79,25 @@ const LESSONS_DATA = [
         data: [
             {
                 lesson_id: 1,
-                title: 'Stand correctly'
+                title: 'Stand correctly',
+                video_url: 'https://www.myactivesg.com/Sports/Basketball/How-To-Play/Basketball-Rules/Basketball-Positions-and-Roles',
+                tip_video_url: 'https://www.myactivesg.com/Sports/Basketball/How-To-Play/Basketball-Rules/Basketball-Positions-and-Roles',
+                desclaimer: 'get your standing position',
+                description: 'this section describes about standing position',
+                tip_title: 'your position before start',
+                tip_desclaimer: 'get your standing position',
+                lesson_type: 'counter'
             },
             {
                 lesson_id: 2,
-                title: 'Ball Bouncing'
+                title: 'Ball Bouncing',
+                video_url: 'https://www.youtube.com/watch?v=8Av6T7AcnyQ',
+                tip_video_url: 'https://www.youtube.com/watch?v=8Av6T7AcnyQ',
+                desclaimer: 'learn to bounce',
+                description: 'this section describes how to bounce the ball with your fingertips',
+                tip_title: 'bounce bal welll',
+                tip_desclaimer: 'learn to bounce',
+                lesson_type: 'counter'
             },
         ]
     },
@@ -78,11 +106,25 @@ const LESSONS_DATA = [
         data: [
             {
                 lesson_id: 1,
-                title: 'Balance the ball'
+                title: 'Balance the ball',
+                video_url: 'https://www.youtube.com/watch?v=5AcYUQJ5RfE',
+                tip_video_url: 'https://www.youtube.com/watch?v=5AcYUQJ5RfE',
+                desclaimer: 'balance while shooting',
+                description: 'this section describes about balancing ball while playing',
+                tip_title: 'balancing tips',
+                tip_desclaimer: 'balance while shooting',
+                lesson_type: 'counter'
             },
             {
                 lesson_id: 2,
-                title: 'push off with your feet'
+                title: 'push off with your feet',
+                video_url: 'https://www.youtube.com/watch?v=xzvrn1SzU2M',
+                tip_video_url: 'https://www.youtube.com/watch?v=xzvrn1SzU2M',
+                desclaimer: 'jump well',
+                description: 'Push off with your feet, jumping straight up',
+                tip_title: 'what should be your position?',
+                tip_desclaimer: 'jump well',
+                lesson_type: 'counter'
             },
         ]
     },
@@ -91,15 +133,36 @@ const LESSONS_DATA = [
         data: [
             {
                 lesson_id: 1,
-                title: 'Learn your role on defense'
+                title: 'Learn your role on defense',
+                video_url: 'https://www.youtube.com/watch?v=J9KL8YjFMm4',
+                tip_video_url: 'https://www.youtube.com/watch?v=J9KL8YjFMm4',
+                desclaimer: 'your role',
+                description: 'this section describes about your role on defense',
+                tip_title: 'perform well while defencing',
+                tip_desclaimer: 'playing with defense',
+                lesson_type: 'counter'
             },
             {
                 lesson_id: 2,
-                title: 'Practice your side-to-side movements'
+                title: 'Practice your side-to-side movements',
+                video_url: 'https://www.youtube.com/watch?v=mTkNmMqfTWs',
+                tip_video_url: 'https://www.youtube.com/watch?v=mTkNmMqfTWs',
+                desclaimer: 'practice well',
+                description: 'this section describes about practice  side-to-side movements',
+                tip_title: 'how to practice',
+                tip_desclaimer: 'practice well',
+                lesson_type: 'counter'
             },
             {
-                lesson_id: 2,
-                title: 'Practice'
+                lesson_id: 3,
+                title: 'Practice',
+                video_url: 'https://www.youtube.com/watch?v=YYUy4pF2eto&vl=en',
+                tip_video_url: 'https://www.youtube.com/watch?v=YYUy4pF2eto&vl=en',
+                desclaimer: 'hello',
+                description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry"s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including',
+                tip_title: 'Hello',
+                tip_desclaimer: 'fhdsihfhds',
+                lesson_type: 'timer'
             },
         ]
     },
@@ -108,7 +171,14 @@ const LESSONS_DATA = [
         data: [
             {
                 lesson_id: 1,
-                title: 'Pass frequently and keep the ball moving'
+                title: 'Pass frequently and keep the ball moving',
+                video_url: 'https://www.youtube.com/watch?v=6paohDgJtjA',
+                tip_video_url: 'https://www.youtube.com/watch?v=6paohDgJtjA',
+                desclaimer: 'play well',
+                description: 'this section describes about Pass frequently and keep the ball moving',
+                tip_title: 'ball passing tips',
+                tip_desclaimer: 'ball passing tips',
+                lesson_type: 'counter'
             },
         ]
     },
@@ -117,7 +187,14 @@ const LESSONS_DATA = [
         data: [
             {
                 lesson_id: 1,
-                title: 'Play knockout'
+                title: 'Play knockout',
+                video_url: 'https://www.youtube.com/watch?v=8ZQV3vsgzCU',
+                tip_video_url: 'https://www.youtube.com/watch?v=8ZQV3vsgzCU',
+                desclaimer: 'play well',
+                description: 'A good game for practicing free-throws and playing with a big group of people is knockout',
+                tip_title: 'Play horse',
+                tip_desclaimer: 'play well',
+                lesson_type: 'counter'
             },
         ]
     },
