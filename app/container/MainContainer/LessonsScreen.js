@@ -8,43 +8,7 @@ import withUser from '../../redux/actionCreator/withUser';
 import withLoader from '../../redux/actionCreator/withLoader';
 import ActionButton from '../../common/ActionButton';
 import { Actions } from 'react-native-router-flux';
-
-// const LESSONS_DATA = [
-// {
-//     lesson_id: 1,
-//     title: 'Get a ball and a hoop'
-// },
-// {
-//     lesson_id: 2,
-//     title: 'Break into two teams'
-// },
-// {
-//     id: 1,
-//     data: [
-//         {
-//             lesson_id: 1,
-//             title: 'Get a ball and a hoop'
-//         },
-//         {
-//             lesson_id: 2,
-//             title: 'Break into two teams'
-//         },
-//     ]
-// },
-// {
-//     id: 2,
-//     data: [
-//         {
-//             lesson_id: 1,
-//             title: 'Stand correctly'
-//         },
-//         {
-//             lesson_id: 2,
-//             title: 'Ball Bouncing'
-//         },
-//     ]
-// }
-// ]
+import BottomBar from '../../common/BottomBar';
 
 class LessonsScreen extends Component {
     constructor(props) {
@@ -56,18 +20,6 @@ class LessonsScreen extends Component {
             selectedLessonMap: [],
         }
     }
-
-    // UNSAFE_componentWillMount() {
-    //     console.log('user===>', this.props.user);
-    //     console.log('workDetail===>', this.props.workoutDetail)
-    //     // console.log('selectedLessonMap===>', this.props.lessonData)
-    //     var tempArr = LESSONS_DATA;
-    //     this.setState({
-    //         lessonsData2: tempArr
-    //     })
-
-    //     this.callGetAllLessons();
-    // }
 
     componentDidMount() {
         // console.log('user===>', this.props.user);
@@ -118,12 +70,14 @@ class LessonsScreen extends Component {
     }
 
     navigateToLessonDetail(lessonDetail) {
-        // for (let index = 0; index < LESSONS_DATA.length; index++) {
-        //     if (lessonDetail.lesson_id == index + 1) {
-        //         tempCompLessons = tempCompLessons + 1;
-        //     }
-        // }
-        // this.setState({ completedLessons: tempCompLessons })
+        var tempCompLessons = 0;
+        for (let index = 0; index < lessonDetail.length; index++) {
+            if (lessonDetail.lesson_id == index + 1) {
+                tempCompLessons = tempCompLessons + 1;
+            }
+        }
+        this.setState({ completedLessons: tempCompLessons })
+        console.log('lesson ==>', lessonDetail)
         Actions.lessondetail({
             lessonDetail: lessonDetail,
             workoutDetail: this.props.workoutDetail,
@@ -150,34 +104,39 @@ class LessonsScreen extends Component {
                     </View>
                 </View>
                 <ScrollView>
-                    <View style={{ marginTop: smartScale(3.5) }}>
+                    <View style={{ marginTop: smartScale(3.5), marginBottom: smartScale(10) }}>
                         <FlatList
                             data={this.state.lessonsData}
                             renderItem={({ item }) => (
-                                <View style={{ borderTopWidth: smartScale(0.2) }}>
-                                    <View style={{ marginHorizontal: smartScale(2), marginTop: smartScale(2) }}>
-                                        <Text style={newstyle.SectionTextStyle}>{item.title}</Text>
+                                console.log('item========>', item),
+                                item.map(subItem => (
+                                    console.log('item========>', subItem.title),
+                                    <View style={{ borderTopWidth: smartScale(0.2) }}>
+                                        <View style={{ marginHorizontal: smartScale(2), marginTop: smartScale(2) }}>
+                                            <Text style={newstyle.SectionTextStyle}>{subItem.title}</Text>
+                                        </View>
+                                        <View style={{ marginTop: smartScale(2.5), justifyContent: 'center', alignItems: 'center' }}>
+                                            <ActionButton
+                                                onPress={() => { this.navigateToLessonDetail(subItem) }}
+                                                title={'Begin'}
+                                                containerStyle={[
+                                                    newstyle.loginButtonContainer,
+                                                    {
+                                                        width: WINDOW.width - 90,
+                                                        borderRadius: smartScale(50),
+                                                        // paddingLeft: smartScale(0),
+                                                        backgroundColor: Colors.headerColor,
+                                                        marginBottom: smartScale(2),
+                                                    }]}
+                                            ></ActionButton>
+                                        </View>
                                     </View>
-                                    <View style={{ marginTop: smartScale(2.5), justifyContent: 'center', alignItems: 'center' }}>
-                                        <ActionButton
-                                            onPress={() => { this.navigateToLessonDetail(item) }}
-                                            title={'Begin'}
-                                            containerStyle={[
-                                                newstyle.loginButtonContainer,
-                                                {
-                                                    width: WINDOW.width - 90,
-                                                    borderRadius: smartScale(50),
-                                                    // paddingLeft: smartScale(0),
-                                                    backgroundColor: Colors.headerColor,
-                                                    marginBottom: smartScale(2),
-                                                }]}
-                                        ></ActionButton>
-                                    </View>
-                                </View>
+                                ))
                             )}
                         ></FlatList>
                     </View>
                 </ScrollView>
+                <BottomBar></BottomBar>
             </View>
         )
     }

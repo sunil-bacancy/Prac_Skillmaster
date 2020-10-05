@@ -72,7 +72,55 @@ const LESSONS_DATA = [
                 title: 'Ball Bouncing'
             },
         ]
-    }
+    },
+    {
+        id: 3,
+        data: [
+            {
+                lesson_id: 1,
+                title: 'Balance the ball'
+            },
+            {
+                lesson_id: 2,
+                title: 'push off with your feet'
+            },
+        ]
+    },
+    {
+        id: 4,
+        data: [
+            {
+                lesson_id: 1,
+                title: 'Learn your role on defense'
+            },
+            {
+                lesson_id: 2,
+                title: 'Practice your side-to-side movements'
+            },
+            {
+                lesson_id: 2,
+                title: 'Practice'
+            },
+        ]
+    },
+    {
+        id: 5,
+        data: [
+            {
+                lesson_id: 1,
+                title: 'Pass frequently and keep the ball moving'
+            },
+        ]
+    },
+    {
+        id: 6,
+        data: [
+            {
+                lesson_id: 1,
+                title: 'Play knockout'
+            },
+        ]
+    },
 ]
 
 class TrophyScreen extends Component {
