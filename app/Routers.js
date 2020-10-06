@@ -33,6 +33,7 @@ import LessonsDetailScreen from './container/MainContainer/LessonDetailScreen';
 import SelectLevelScreen from './container/MainContainer/SelectLevelScreen';
 import LessonTipScreen from './container/MainContainer/LessonTipScreen';
 import LessonCompletedScreen from './container/MainContainer/LessonCompletedScreen';
+import AccountSettings from './container/MainContainer/AccountSettings';
 
 class Routers extends Component {
     constructor(props) {
@@ -47,8 +48,9 @@ class Routers extends Component {
                 {/* <Scene key='signup' component={SignupScreen} hideNavBar={true}></Scene> */}
                 {/* <Scene key='signupemail' component={SignUpWithEmail} hideNavBar={true} ></Scene> */}
                 {/* <Scene key='header' component={Header} hideNavBar={true}></Scene> */}
-                <Scene key='skills' component={SkillScreen} hideNavBar={true}></Scene>
+                {/* <Scene key='skills' component={SkillScreen} hideNavBar={true}></Scene> */}
                 {/* <Scene key='learnskills' component={LearnSkillScreen} hideNavBar={true}></Scene> */}
+                <Scene key='accountsettings' component={AccountSettings} hideNavBar={true}></Scene>
                 {/* <Scene key='privacypolicy' component={PrivacyPolicyScreen} hideNavBar={true}></Scene> */}
                 {/* <Scene key='stsore' component={StoreScreen} hideNavBar={true} initials></Scene> */}
                 {/* <Scene key="personalrecords" component={PersonalRecordsScreen} hideNavBar={true}></Scene> */}
@@ -59,12 +61,12 @@ class Routers extends Component {
                 {/* <Scene key='enterpassword' component={EnterPasswordScreen} hideNavBar={true}></Scene> */}
                 {/* <Scene key='verifyotp' component={VerifyOTPScreen} hideNavBar={true}></Scene> */}
                 {/* <Scene key='setnewpassword' component={SetNewPasswordScreen} hideNavBar={true} ></Scene> */}
-                <Scene key='selectlevel' component={SelectLevelScreen} hideNavBar={true}></Scene>
-                <Scene key='trophy' component={TrophyScreen} hideNavBar={true}></Scene>
-                <Scene key='lessons' component={LessonsScreen} hideNavBar={true}></Scene>
-                <Scene key='lessondetail' component={LessonsDetailScreen} hideNavBar={true}></Scene>
-                <Scene key='lessontip' component={LessonTipScreen} hideNavBar={true}></Scene>
-                <Scene key='lessoncompleted' component={LessonCompletedScreen} hideNavBar={true}></Scene>
+                {/* <Scene key='selectlevel' component={SelectLevelScreen} hideNavBar={true}></Scene> */}
+                {/* <Scene key='trophy' component={TrophyScreen} hideNavBar={true}></Scene> */}
+                {/* <Scene key='lessons' component={LessonsScreen} hideNavBar={true}></Scene> */}
+                {/* <Scene key='lessondetail' component={LessonsDetailScreen} hideNavBar={true}></Scene> */}
+                {/* <Scene key='lessontip' component={LessonTipScreen} hideNavBar={true}></Scene> */}
+                {/* <Scene key='lessoncompleted' component={LessonCompletedScreen} hideNavBar={true}></Scene> */}
                 <Scene hideNavBar panHandlers={null}>
                     <Tabs>
                         {/* key="dashboard"

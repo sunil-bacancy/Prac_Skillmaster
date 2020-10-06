@@ -13,15 +13,18 @@ import { loaderSet } from '../../redux/actions';
 import withLoader from '../../redux/actionCreator/withLoader';
 import { LoginManager, AccessToken, GraphRequest, GraphRequestManager } from 'react-native-fbsdk';
 import { setUser } from '../../redux/actions';
+import withUser from '../../redux/actionCreator/withUser';
 
 class LoginScreen extends Component {
     constructor(props) {
         super(props);
     }
 
-    doLogin = () => {
+    doLogin = (loginData) => {
         const { loader } = this.props;
         loader(true)
+        console.log('user props at login Button ==>', this.props.user)
+        loader(false);
         //    alert('successful')
     }
 
@@ -243,7 +246,7 @@ const mapStateToProps = (state) => {
     };
 }
 
-export default connect(mapStateToProps, { setUser, })(withForm(withLoader(LoginScreen)));
+export default connect(mapStateToProps, { setUser, })(withForm(withUser(withLoader(LoginScreen))));
 
 const newStyle = StyleSheet.create({
     privacyPolicy: {

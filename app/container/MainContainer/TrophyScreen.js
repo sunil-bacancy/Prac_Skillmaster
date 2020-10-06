@@ -283,7 +283,8 @@ class TrophyScreen extends Component {
         Actions.lessons({
             workoutDetail: workoutDetail,
             skillMapDetail: this.props.skillMapDetail,
-            lessonData: element
+            lessonData: element,
+            userLevel: this.props.userLevel
         })
     }
 

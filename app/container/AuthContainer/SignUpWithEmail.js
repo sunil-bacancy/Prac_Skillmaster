@@ -12,6 +12,8 @@ import { Actions } from 'react-native-router-flux';
 import DateTimePickerModel from 'react-native-modal-datetime-picker';
 import moment from 'moment';
 import withLoader from '../../redux/actionCreator/withLoader';
+import { setUser } from '../../redux/actions'
+import AsyncStorage from '@react-native-community/async-storage';
 
 class SignUpWithEmail extends Component {
     constructor(props) {
@@ -39,10 +41,31 @@ class SignUpWithEmail extends Component {
         )
     }
 
-    doSignup = () => {
+    doSignup = (SignUpData) => {
         const { loader } = this.props;
         loader(true)
-        // alerst('alerst')
+        const user = {
+            first_name: SignUpData.firstname,
+            last_name: SignUpData.lastname,
+            email: SignUpData.email.toLowerCase(),
+            email_confirmation: SignUpData.confirmemail.toLowerCase(),
+            dob: this.state.dateOfBirth,
+            password: SignUpData.password,
+            password_confirmation: SignUpData.confirmpassword,
+            role: 'parent'
+        }
+        this.props.setUser(user)
+        Actions.skills()
+        // AsyncStorage.setItem('registrationData', JSON.stringify(user), (err) => {
+        //     if (err) {
+        //         console.log('an error');
+        //         throw err;
+        //     }
+        //     console.log('success')
+        // }).catch((err) => {
+        //     console.log('error is: ' + errs)
+        // })
+        loader(false)
     }
 
     render() {
@@ -265,4 +288,4 @@ const mapStateToProps = (state) => {
         password: selector(state, 'password')
     }
 }
-export default withForm(withLoader(connect(mapStateToProps, {})(SignUpWithEmail)));
+export default withForm(withLoader(connect(mapStateToProps, { setUser })(SignUpWithEmail)));

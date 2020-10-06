@@ -5,12 +5,14 @@ import ActionButton from '../../common/ActionButton';
 import { Actions } from 'react-native-router-flux';
 import styles from '../../theme';
 import { ScrollView, FlatList, TouchableOpacity } from 'react-native-gesture-handler';
-import { WINDOW, smartScale, LOGIN_FACEBOOK, LOGIN_GOOGLE } from '../../utils/AppUtils';
+import { WINDOW, smartScale, LOGIN_FACEBOOK, LOGIN_GOOGLE, LOGIN_APPLE } from '../../utils/AppUtils';
 import Colors from '../../theme/Colors'
 import withLoader from '../../redux/actionCreator/withLoader';
 import { LoginManager, GraphRequest, GraphRequestManager, AccessToken } from 'react-native-fbsdk';
 import { GoogleSignin, statusCodes } from 'react-native-google-signin';
 import { loaderSet } from '../../redux/actions';
+import { setUser } from '../../redux/actions';
+import { connect } from 'react-redux';
 
 class SignupScreen extends Component {
     constructor(props) {
@@ -32,9 +34,33 @@ class SignupScreen extends Component {
         const { loader, toast } = this.props;
         loader(true)
         var requestObj = {};
+        var user_id = 0;
+
         console.log('LoginData====>>', loginData)
+        if (loginData.accountType != LOGIN_APPLE) {
+            const user = {
+                first_name: loginData.firstName != null ? loginData.firstName : '',
+                last_name: loginData.lastName != null ? loginData.lastName : '',
+                email: loginData.email != null ? loginData.email : '',
+                role: 'parent',
+                id: user_id + 1,
+            }
+            // const social_user = {
+            //     uid: loginData.verifyToken != null ? loginData.verifyToken : '',
+            //     provider: loginData.accountType != null ? loginData.accountType : '',
+            //     full_response: loginData,
+            // }
+            // const requestObj = {
+            //     user: user,
+            //     social_user: social_user,
+            // }
+            this.props.setUser(user)
+            console.log('FB user_Info====>', user)
+            Actions.skills();
+        }
         loader(false)
     }
+
 
     signUpWithFB = () => {
         const { loader, toast } = this.props;
@@ -226,4 +252,4 @@ class SignupScreen extends Component {
 }
 
 
-export default withLoader(SignupScreen);
+export default connect(null, { setUser })(withLoader(SignupScreen));

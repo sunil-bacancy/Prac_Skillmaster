@@ -5,6 +5,7 @@ import { Actions } from 'react-native-router-flux'
 import AppImages from '../../assets/images/index';
 import { smartScale, WINDOW, fontSizeContent } from '../../utils/AppUtils';
 import Colors from '../../theme/Colors';
+import withUser from '../../redux/actionCreator/withUser';
 
 class SplashScreen extends Component {
     constructor(props) {
@@ -19,7 +20,7 @@ class SplashScreen extends Component {
             } else {
                 Actions.login();
             }
-        }, 2000)
+        }, 3000)
     }
 
     renderData = (value, index) => {
@@ -68,7 +69,7 @@ class SplashScreen extends Component {
     }
 }
 
-export default SplashScreen;
+export default withUser(SplashScreen);
 
 const newStyles = StyleSheet.create({
     appIconStyle: {

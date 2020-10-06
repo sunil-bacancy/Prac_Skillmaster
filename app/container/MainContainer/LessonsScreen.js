@@ -25,6 +25,7 @@ class LessonsScreen extends Component {
         // console.log('user===>', this.props.user);
         console.log('workDetail===>', this.props.workoutDetail)
         console.log('selectedLessonData===>', this.props.lessonData)
+        console.log(this.props.isFormLessonCompleted)
         // var tempArr = LESSONS_DATA;
         this.setState({
             lessonsData: this.props.lessonData
@@ -37,6 +38,26 @@ class LessonsScreen extends Component {
         const { loader } = this.props;
         Keyboard.dismiss();
         loader(true)
+        if (this.props.isFormLessonCompleted === true) {
+            console.log('isFormComleetd', this.props.allLessons)
+            this.props.allLessons.map(item => {
+                // console.log(item.length)
+                for (let index = 0; index < item.length; index++) {
+                    var tempId = this.props.lessonDetail.lesson_id + 1;
+                    const elementTemp = item[index];
+                    if (elementTemp.lesson_id === tempId) {
+                        Actions.lessondetail({
+                            lessonDetail: elementTemp,
+                            workoutDetail: this.props.workoutDetail,
+                            skillMapDetail: this.props.skillMapDetail,
+                            allLessons: this.props.lessonData,
+                            userLevel: this.props.userLevel,
+                            allLessons: this.props.allLessons
+                        })
+                    }
+                }
+            })
+        }
         // const lesson = {
         //     user_id: this.props.user != null && this.props.user != undefined
         //         ? this.props.user.dismiss
@@ -82,7 +103,8 @@ class LessonsScreen extends Component {
             lessonDetail: lessonDetail,
             workoutDetail: this.props.workoutDetail,
             skillMapDetail: this.props.skillMapDetail,
-            allLessons: this.props.lessonData
+            allLessons: this.props.lessonData,
+            userLevel: this.props.userLevel
         })
     }
 

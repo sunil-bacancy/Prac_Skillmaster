@@ -72,7 +72,9 @@ class LessonDetailScreen extends Component {
         Actions.lessontip({
             // lessonsData: lessonsData,
             videoURLTip: videoURLTip,
-            lessonDetail: this.props.lessonDetail
+            lessonDetail: this.props.lessonDetail,
+            skillMapDetail: this.props.skillMapDetail,
+            userLevel: this.props.userLevel
         });
     }
 
@@ -80,6 +82,9 @@ class LessonDetailScreen extends Component {
         Actions.lessoncompleted({
             lessonDetail: this.props.lessonDetail,
             lessonData: this.state.lessonDetailData,
+            allLessons: this.props.allLessons,
+            skillMapDetail: this.props.skillMapDetail,
+            userLevel: this.props.userLevel
         })
     }
 
