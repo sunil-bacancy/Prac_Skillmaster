@@ -34,6 +34,7 @@ import SelectLevelScreen from './container/MainContainer/SelectLevelScreen';
 import LessonTipScreen from './container/MainContainer/LessonTipScreen';
 import LessonCompletedScreen from './container/MainContainer/LessonCompletedScreen';
 import AccountSettings from './container/MainContainer/AccountSettings';
+import ChangePasswordScreen from './container/MainContainer/ChangePasswordScreen';
 
 class Routers extends Component {
     constructor(props) {
@@ -50,7 +51,7 @@ class Routers extends Component {
                 {/* <Scene key='header' component={Header} hideNavBar={true}></Scene> */}
                 {/* <Scene key='skills' component={SkillScreen} hideNavBar={true}></Scene> */}
                 {/* <Scene key='learnskills' component={LearnSkillScreen} hideNavBar={true}></Scene> */}
-                <Scene key='accountsettings' component={AccountSettings} hideNavBar={true}></Scene>
+                {/* <Scene key='accountsettings' component={AccountSettings} hideNavBar={true}></Scene> */}
                 {/* <Scene key='privacypolicy' component={PrivacyPolicyScreen} hideNavBar={true}></Scene> */}
                 {/* <Scene key='stsore' component={StoreScreen} hideNavBar={true} initials></Scene> */}
                 {/* <Scene key="personalrecords" component={PersonalRecordsScreen} hideNavBar={true}></Scene> */}
@@ -67,6 +68,7 @@ class Routers extends Component {
                 {/* <Scene key='lessondetail' component={LessonsDetailScreen} hideNavBar={true}></Scene> */}
                 {/* <Scene key='lessontip' component={LessonTipScreen} hideNavBar={true}></Scene> */}
                 {/* <Scene key='lessoncompleted' component={LessonCompletedScreen} hideNavBar={true}></Scene> */}
+                <Scene key='changepassword' component={ChangePasswordScreen} hideNavBar={true}></Scene>
                 <Scene hideNavBar panHandlers={null}>
                     <Tabs>
                         {/* key="dashboard"

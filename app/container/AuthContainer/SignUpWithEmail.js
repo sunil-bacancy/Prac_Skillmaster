@@ -24,10 +24,6 @@ class SignUpWithEmail extends Component {
         }
     }
 
-    // componentDidMount = () => {
-    //     console.disableYellowBox = true;
-    // }
-
     renderData = (item, index) => {
         return (
             <View>

@@ -46,7 +46,7 @@ class CustomField extends Component {
         const {
             refProp, input, multiline, keyboardType, inputFormat, onChangeText, changeSuccessColor, placeholder, secureTextEntry, _onFocus, _onBlur,
             selectTextOnFocus, containerStyle, onLayout, ellipsizeMode, numberOfLines, returnKeyType, autoFocus, onEndEditing, autoGrow, maxLength, autoCapitalize, placeholderTextColor, autoCorrect, style, disabled, meta: { touched, error, warning }, leftSideComponent, onSubmitEditing,
-            labelComponent, info, onInfoPress, itemInputStyle, editable, textInputStyle
+            labelComponent, info, onInfoPress, itemInputStyle, editable, textInputStyle, value
         } = this.props;
         const hasError = (typeof error !== 'undefined' ? true : false);
         // const itemStyle = (itemInputStyle) ? itemInputStyle : styles.itemInputField;
@@ -85,6 +85,7 @@ class CustomField extends Component {
                         editable={editable}
                         underlineColorAndroid={'transparent'}
                         onChangeText={onChangeText}
+                        value={value}
                     // {...(_onFocus) ? {
                     //     onFocus: () => {
                     //         _onFocus();
