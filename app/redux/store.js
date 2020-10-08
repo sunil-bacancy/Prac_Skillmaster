@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { reducer as formReducer } from 'redux-form';
-import { loader, toast, user, addmember } from './reducers';
+import { loader, toast, user, addmember, internetConn } from './reducers';
 import AsyncStorage from '@react-native-community/async-storage';
 import { persistReducer, persistStore } from 'redux-persist';
 import thunk from 'redux-thunk';
@@ -10,6 +10,7 @@ const rootReducer = combineReducers({
     toast: toast,
     user: user,
     addmember: addmember,
+    internetConn: internetConn,
     form: formReducer
 })
 
@@ -24,7 +25,7 @@ const persistConfig = {
     //Whitelist (Save Specific Reducers)
     whitelist: ['user', 'addmember'],
     //Blacklist (Don't Save Specific Reducers)
-    blacklist: ['loader', 'toast', 'form']
+    blacklist: ['loader', 'toast', 'internetConn', 'form']
 }
 //Middleware: Redux persist persisted Reducer
 const persistedReducer = persistReducer(persistConfig, rootReducer);

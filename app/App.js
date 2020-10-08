@@ -6,6 +6,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import MainContainer from './container/MainContainer/MainContainer';
 import { View } from 'react-native';
 import styles from './theme/index';
+import OfflineAlert from './common/OfflineAlert';
 
 export default class App extends Component {
     render() {
@@ -19,6 +20,7 @@ export default class App extends Component {
                     </View>
                     {/* </View> */}
                 </PersistGate>
+                <OfflineAlert></OfflineAlert>
             </Provider>
         )
     }

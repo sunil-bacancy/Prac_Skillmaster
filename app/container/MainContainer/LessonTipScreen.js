@@ -42,7 +42,10 @@ class LessonTipScreen extends Component {
                         </View>
                         <ActionButton
                             title={'Return to Lesson'}
-                            onPress={() => Actions.lessondetail({ lessonDetail: this.props.lessonDetail })}
+                            onPress={() => Actions.lessondetail({
+                                lessonDetail: this.props.lessonDetail,
+                                allLessons: this.props.allLessons,
+                            })}
                             containerStyle={[
                                 newstyle.loginButtonContainer,
                                 {

@@ -1,4 +1,5 @@
-import { LOADER_SET, TOAST_SET, USER_SET, ADDMEMBER_SET } from '../redux/actions';
+import { act } from 'react-test-renderer';
+import { LOADER_SET, TOAST_SET, USER_SET, ADDMEMBER_SET, INTERNET_CONN_SET } from '../redux/actions';
 
 export const loader = (state = false, action) => {
     switch (action.type) {
@@ -22,6 +23,15 @@ export const user = (state = null, action) => {
     switch (action.type) {
         case USER_SET:
             return action.user;
+        default:
+            return state;
+    }
+}
+
+export const internetConn = (state = false, action) => {
+    switch (action.type) {
+        case INTERNET_CONN_SET:
+            return action.state;
         default:
             return state;
     }

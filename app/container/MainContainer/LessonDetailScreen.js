@@ -74,6 +74,7 @@ class LessonDetailScreen extends Component {
             videoURLTip: videoURLTip,
             lessonDetail: this.props.lessonDetail,
             skillMapDetail: this.props.skillMapDetail,
+            allLessons: this.props.allLessons,
             userLevel: this.props.userLevel
         });
     }

@@ -44,30 +44,29 @@ class Routers extends Component {
     _routeScreens() {
         return (
             <Scene key='root'>
-                {/* <Scene key='splash' component={SplashScreen} hideNavBar={true} initial={true}></Scene> */}
-                {/* <Scene key='login' component={LoginScreen} hideNavBar={true} ></Scene> */}
-                {/* <Scene key='signup' component={SignupScreen} hideNavBar={true}></Scene> */}
-                {/* <Scene key='signupemail' component={SignUpWithEmail} hideNavBar={true} ></Scene> */}
-                {/* <Scene key='header' component={Header} hideNavBar={true}></Scene> */}
-                {/* <Scene key='skills' component={SkillScreen} hideNavBar={true}></Scene> */}
-                {/* <Scene key='learnskills' component={LearnSkillScreen} hideNavBar={true}></Scene> */}
-                {/* <Scene key='accountsettings' component={AccountSettings} hideNavBar={true}></Scene> */}
-                {/* <Scene key='privacypolicy' component={PrivacyPolicyScreen} hideNavBar={true}></Scene> */}
-                {/* <Scene key='stsore' component={StoreScreen} hideNavBar={true} initials></Scene> */}
-                {/* <Scene key="personalrecords" component={PersonalRecordsScreen} hideNavBar={true}></Scene> */}
-                {/* <Scene key="familymanagement" component={FamilyManagementScreen} hideNavBar={true}></Scene> */}
-                {/* <Scene key='coacheslessons' component={CoachesLessonsScreen} hideNavBar={true}></Scene> */}
-                {/* <Scene key="addfamilymember" component={AddFamilyMember} hideNavBar={true}></Scene> */}
-                {/* <Scene key="familyaccountsettings" component={FamilyAccountSettings} hideNavBar={true}></Scene> */}
-                {/* <Scene key='enterpassword' component={EnterPasswordScreen} hideNavBar={true}></Scene> */}
-                {/* <Scene key='verifyotp' component={VerifyOTPScreen} hideNavBar={true}></Scene> */}
-                {/* <Scene key='setnewpassword' component={SetNewPasswordScreen} hideNavBar={true} ></Scene> */}
-                {/* <Scene key='selectlevel' component={SelectLevelScreen} hideNavBar={true}></Scene> */}
-                {/* <Scene key='trophy' component={TrophyScreen} hideNavBar={true}></Scene> */}
-                {/* <Scene key='lessons' component={LessonsScreen} hideNavBar={true}></Scene> */}
-                {/* <Scene key='lessondetail' component={LessonsDetailScreen} hideNavBar={true}></Scene> */}
-                {/* <Scene key='lessontip' component={LessonTipScreen} hideNavBar={true}></Scene> */}
-                {/* <Scene key='lessoncompleted' component={LessonCompletedScreen} hideNavBar={true}></Scene> */}
+                <Scene key='splash' component={SplashScreen} hideNavBar={true} initial={true}></Scene>
+                <Scene key='login' component={LoginScreen} hideNavBar={true} ></Scene>
+                <Scene key='signup' component={SignupScreen} hideNavBar={true}></Scene>
+                <Scene key='signupemail' component={SignUpWithEmail} hideNavBar={true} ></Scene>
+                <Scene key='skills' component={SkillScreen} hideNavBar={true}></Scene>
+                <Scene key='learnskills' component={LearnSkillScreen} hideNavBar={true}></Scene>
+                <Scene key='accountsettings' component={AccountSettings} hideNavBar={true}></Scene>
+                <Scene key='privacypolicy' component={PrivacyPolicyScreen} hideNavBar={true}></Scene>
+                <Scene key='stsore' component={StoreScreen} hideNavBar={true} initials></Scene>
+                <Scene key="personalrecords" component={PersonalRecordsScreen} hideNavBar={true}></Scene>
+                <Scene key="familymanagement" component={FamilyManagementScreen} hideNavBar={true}></Scene>
+                <Scene key='coacheslessons' component={CoachesLessonsScreen} hideNavBar={true}></Scene>
+                <Scene key="addfamilymember" component={AddFamilyMember} hideNavBar={true}></Scene>
+                <Scene key="familyaccountsettings" component={FamilyAccountSettings} hideNavBar={true}></Scene>
+                <Scene key='enterpassword' component={EnterPasswordScreen} hideNavBar={true}></Scene>
+                <Scene key='verifyotp' component={VerifyOTPScreen} hideNavBar={true}></Scene>
+                <Scene key='setnewpassword' component={SetNewPasswordScreen} hideNavBar={true} ></Scene>
+                <Scene key='selectlevel' component={SelectLevelScreen} hideNavBar={true}></Scene>
+                <Scene key='trophy' component={TrophyScreen} hideNavBar={true}></Scene>
+                <Scene key='lessons' component={LessonsScreen} hideNavBar={true}></Scene>
+                <Scene key='lessondetail' component={LessonsDetailScreen} hideNavBar={true}></Scene>
+                <Scene key='lessontip' component={LessonTipScreen} hideNavBar={true}></Scene>
+                <Scene key='lessoncompleted' component={LessonCompletedScreen} hideNavBar={true}></Scene>
                 <Scene key='changepassword' component={ChangePasswordScreen} hideNavBar={true}></Scene>
                 <Scene hideNavBar panHandlers={null}>
                     <Tabs>
