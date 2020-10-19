@@ -8,6 +8,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import Colors from '../../theme/Colors';
 import withUser from '../../redux/actionCreator/withUser';
 import withLoader from '../../redux/actionCreator/withLoader';
+import withToast from '../../redux/actionCreator/withToast';
 import InputField from '../../common/InputField';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
@@ -16,6 +17,7 @@ import moment from 'moment';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import ActionButton from '../../common/ActionButton';
 import { Actions } from 'react-native-router-flux';
+
 
 class AccountSettings extends Component {
     constructor(props) {
@@ -29,8 +31,12 @@ class AccountSettings extends Component {
         };
     }
     componentDidMount() {
-        const { user } = this.props;
+        const { user,toast } = this.props;
         console.log('user? ', user);
+        // console.log('toast=>',toast)
+        // setTimeout(()=>{
+        //         toast({text:'successfull'});
+        //     },2000)
         var tempDate = '';
         if (user != null) {
             if (user.dob != null) {
@@ -45,7 +51,17 @@ class AccountSettings extends Component {
     }
 
     doUpdateUser() {
-
+        const {loader, toast}=this.props;
+        const {first_name,last_name,visiblePicker,dateOfBirth}=this.state;
+        if(first_name===""){
+            setTimeout(()=>{
+                toast({text:'First name is required'});
+            },2000)
+        }else{
+            setTimeout(()=>{
+                toast({text:'successfull'});
+            },2000)
+        }
     }
     // renderData = (item) => {
     //     return (
@@ -195,7 +211,8 @@ class AccountSettings extends Component {
                                 }
 
                             ]}
-                            onPress={() => this.doUpdateUser}
+                            
+                            onPress={() => this.doUpdateUser()}
                         />
                         <ActionButton
                             title={'Change Password'}
@@ -234,7 +251,7 @@ const mapStateToProps = (state) => {
     return {};
 }
 
-export default connect(mapStateToProps, { setUser })(withForm(withUser(withLoader(AccountSettings))));
+export default connect(mapStateToProps, { setUser })(withUser(withLoader(withToast(withForm(AccountSettings)))));
 
 const newstyle = StyleSheet.create({
     SectionTextStyle: {

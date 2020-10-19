@@ -9,7 +9,11 @@ import { WINDOW, smartScale, LOGIN_FACEBOOK, LOGIN_GOOGLE, LOGIN_APPLE } from '.
 import Colors from '../../theme/Colors'
 import withLoader from '../../redux/actionCreator/withLoader';
 import { LoginManager, GraphRequest, GraphRequestManager, AccessToken } from 'react-native-fbsdk';
-import { GoogleSignin, statusCodes } from 'react-native-google-signin';
+import {
+    GoogleSignin,
+    GoogleSigninButton,
+    statusCodes,
+  } from '@react-native-community/google-signin';
 import { loaderSet } from '../../redux/actions';
 import { setUser } from '../../redux/actions';
 import { connect } from 'react-redux';
@@ -17,18 +21,44 @@ import { connect } from 'react-redux';
 class SignupScreen extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            userInfo: null,
+            gettingLoginStatus: true,
+          };
     }
 
-    componentDidMount() {
+    componentDidMount(){
         GoogleSignin.configure({
-            scopes: ['https://www.googleapis.com/auth/drive.readonly'],
-            webClientId: '145673018369-vm9nfod6p9cftpkp50gc8kr7hg5r16ul.apps.googleusercontent.com',
-            offlineAccess: true,
-            androidClientId: '145673018369-qo655hcugnthl6ons9a0oa1v3cmpf78g.apps.googleusercontent.com',
-            forceConsentPrompt: true,
-        })
+            scopes: ['profile', 'email', 'openid'],
+            webClientId:'496163987837-b3k7dvvt3nlrg49nuf93a25s1kpuoobr.apps.googleusercontent.com',
+            
+            androidClientId:'496163987837-q4nq02s8psj968sr3t15q0grgavrn2on.apps.googleusercontent.com',
+            // iosClientId: IOS_CLIENT_ID
+        });
+        
+        // GoogleSignin.configure({
+        //     scopes: ['https://www.googleapis.com/auth/drive.readonly'], // what API you want to access on behalf of the user, default is email and profile
+        //     webClientId: '496163987837-b3k7dvvt3nlrg49nuf93a25s1kpuoobr.apps.googleusercontent.com', // client ID of type WEB for your server (needed to verify user ID and offline access)
+        //     offlineAccess: true, // if you want to access Google API on behalf of the user FROM YOUR SERVER
+        //     // hostedDomain: '', // specifies a hosted domain restriction
+        //     // loginHint: '', // [iOS] The user's ID, or email address, to be prefilled in the authentication UI if possible. [See docs here](https://developers.google.com/identity/sign-in/ios/api/interface_g_i_d_sign_in.html#a0a68c7504c31ab0b728432565f6e33fd)
+        //     forceCodeForRefreshToken: true, // [Android] related to `serverAuthCode`, read the docs link below *.
+        //     // accountName: '', // [Android] specifies an account name on the device that should be used
+        //     // iosClientId: '<FROM DEVELOPER CONSOLE>', // [iOS] optional, if you want to specify the client ID of type iOS (otherwise, it is taken from GoogleService-Info.plist)
+        //   });
     }
 
+    
+    // componentDidMount() {
+    //     GoogleSignin.configure({
+    //         scopes: ['https://www.googleapis.com/auth/drive.readonly'],
+    //         webClientId: '145673018369-vm9nfod6p9cftpkp50gc8kr7hg5r16ul.apps.googleusercontent.com',
+    //         offlineAccess: true,
+    //         androidClientId: '145673018369-qo655hcugnthl6ons9a0oa1v3cmpf78g.apps.googleusercontent.com',
+    //         forceConsentPrompt: true,
+    //     })
+    // }
+    
 
     doSocialSignUp = (loginData) => {
         const { loader, toast } = this.props;
@@ -60,7 +90,6 @@ class SignupScreen extends Component {
         }
         loader(false)
     }
-
 
     signUpWithFB = () => {
         const { loader, toast } = this.props;
@@ -133,14 +162,16 @@ class SignupScreen extends Component {
     signUpWithGoogle = async () => {
         const { loader, toast } = this.props;
         // await GoogleSignin.signOut();
-
+        
         try {
+            const userInfo = await GoogleSignin.signIn();
+            console.log('userInfo--->',userInfo)
             if ((await GoogleSignin.isSignedIn()).valueOf(true)) {
                 await GoogleSignin.revokeAccess();
                 return await GoogleSignin.signOut();
             } else {
-                // console.log('First-----')
-                // await GoogleSignin.hasPlayServices();
+                console.log('First-----')
+                await GoogleSignin.hasPlayServices();
                 loader(true);
                 // console.log('Second----');
                 const userInfo = await GoogleSignin.signIn();
@@ -228,6 +259,7 @@ class SignupScreen extends Component {
                                     onPress={() => this.signUpWithFB()}
                                 >
                                 </ActionButton>
+                                
                                 <ActionButton
                                     title={'Sign up with Google'}
                                     icon={'google-plus'}

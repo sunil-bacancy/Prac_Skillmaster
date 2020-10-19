@@ -1,42 +1,42 @@
 {
   "project_info": {
-    "project_number": "145673018369",
-    "firebase_url": "https://fir-demo-b7af7.firebaseio.com",
-    "project_id": "fir-demo-b7af7",
-    "storage_bucket": "fir-demo-b7af7.appspot.com"
+    "project_number": "496163987837",
+    "firebase_url": "https://fir-demos-94145.firebaseio.com",
+    "project_id": "fir-demos-94145",
+    "storage_bucket": "fir-demos-94145.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:145673018369:android:158891ea0ac5b7e24e3400",
+        "mobilesdk_app_id": "1:496163987837:android:711d60483b18e070b7ec14",
         "android_client_info": {
-          "package_name": "com.fbgooglesignin129"
+          "package_name": "com.googleprac"
         }
       },
       "oauth_client": [
         {
-          "client_id": "145673018369-cn232v3ijd8ktjogckmg138n7jvofo9j.apps.googleusercontent.com",
+          "client_id": "496163987837-85mglfcv3dr5kua0djbttvk2u70h1v1r.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.fbgooglesignin129",
+            "package_name": "com.googleprac",
             "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
           }
         },
         {
-          "client_id": "145673018369-vm9nfod6p9cftpkp50gc8kr7hg5r16ul.apps.googleusercontent.com",
+          "client_id": "496163987837-b3k7dvvt3nlrg49nuf93a25s1kpuoobr.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDEzlxY3hIb8hzErS5P4YaZNJXU1-EPmK0"
+          "current_key": "AIzaSyC6mMxx8FTHl2PrHYN3oK-tp3IYpWB03Us"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "145673018369-vm9nfod6p9cftpkp50gc8kr7hg5r16ul.apps.googleusercontent.com",
+              "client_id": "496163987837-b3k7dvvt3nlrg49nuf93a25s1kpuoobr.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -45,35 +45,27 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:145673018369:android:eb385c85ce7271374e3400",
+        "mobilesdk_app_id": "1:496163987837:android:5ed53a7538d0881bb7ec14",
         "android_client_info": {
-          "package_name": "com.googlefblogin"
+          "package_name": "com.jjsjdcjsd"
         }
       },
       "oauth_client": [
         {
-          "client_id": "145673018369-k0dsq77e72faqn9gt6vorl4hjfnafpb3.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.googlefblogin",
-            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
-          }
-        },
-        {
-          "client_id": "145673018369-vm9nfod6p9cftpkp50gc8kr7hg5r16ul.apps.googleusercontent.com",
+          "client_id": "496163987837-b3k7dvvt3nlrg49nuf93a25s1kpuoobr.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDEzlxY3hIb8hzErS5P4YaZNJXU1-EPmK0"
+          "current_key": "AIzaSyC6mMxx8FTHl2PrHYN3oK-tp3IYpWB03Us"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "145673018369-vm9nfod6p9cftpkp50gc8kr7hg5r16ul.apps.googleusercontent.com",
+              "client_id": "496163987837-b3k7dvvt3nlrg49nuf93a25s1kpuoobr.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -82,35 +74,35 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:145673018369:android:236be1d225c678fe4e3400",
+        "mobilesdk_app_id": "1:496163987837:android:92290643a2916069b7ec14",
         "android_client_info": {
           "package_name": "com.prac_skillmaster"
         }
       },
       "oauth_client": [
         {
-          "client_id": "145673018369-m40btr2qhue0c6mq826d0bahb1ee4d21.apps.googleusercontent.com",
+          "client_id": "496163987837-8hs4jdeeme5r6direkb3asloq0eu7b5l.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.prac_skillmaster",
-            "certificate_hash": "53cb50b8a2718df414b66fa57736fdae34582c68"
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
           }
         },
         {
-          "client_id": "145673018369-vm9nfod6p9cftpkp50gc8kr7hg5r16ul.apps.googleusercontent.com",
+          "client_id": "496163987837-b3k7dvvt3nlrg49nuf93a25s1kpuoobr.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDEzlxY3hIb8hzErS5P4YaZNJXU1-EPmK0"
+          "current_key": "AIzaSyC6mMxx8FTHl2PrHYN3oK-tp3IYpWB03Us"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "145673018369-vm9nfod6p9cftpkp50gc8kr7hg5r16ul.apps.googleusercontent.com",
+              "client_id": "496163987837-b3k7dvvt3nlrg49nuf93a25s1kpuoobr.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

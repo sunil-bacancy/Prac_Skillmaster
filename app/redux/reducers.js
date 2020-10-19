@@ -1,4 +1,3 @@
-import { act } from 'react-test-renderer';
 import { LOADER_SET, TOAST_SET, USER_SET, ADDMEMBER_SET, INTERNET_CONN_SET } from '../redux/actions';
 
 export const loader = (state = false, action) => {
@@ -10,10 +9,10 @@ export const loader = (state = false, action) => {
     }
 }
 
-export const toast = (state = false, action) => {
+export const toast = (state = '', action) => {
     switch (action.type) {
         case TOAST_SET:
-            return action.state;
+            return action.text;
         default:
             return state;
     }

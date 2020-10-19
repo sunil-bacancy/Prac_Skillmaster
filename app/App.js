@@ -6,6 +6,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import MainContainer from './container/MainContainer/MainContainer';
 import { View } from 'react-native';
 import styles from './theme/index';
+import Toast from './common/Toast';
 import OfflineAlert from './common/OfflineAlert';
 
 export default class App extends Component {
@@ -17,6 +18,7 @@ export default class App extends Component {
                     <View style={{ flex: 1 }}>
                         <Routers />
                         <MainContainer />
+                        <Toast></Toast>
                     </View>
                     {/* </View> */}
                 </PersistGate>

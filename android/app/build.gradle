@@ -1,5 +1,4 @@
 apply plugin: "com.android.application"
-apply plugin: 'com.google.gms.google-services'
 
 import com.android.build.OutputFile
 
@@ -135,7 +134,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
-        multiDexEnabled true
+//        multiDexEnabled true
     }
     splits {
         abi {
@@ -183,13 +182,20 @@ android {
 }
 
 dependencies {
-    implementation 'com.google.firebase:firebase-analytics:17.5.0'
-    implementation 'com.android.support:multidex:1.0.3'
+//    def multidex_version = "2.0.1"
+//    implementation 'com.google.firebase:firebase-analytics:17.5.0'
+
+//    implementation "androidx.multidex:multidex:$multidex_version"
+//    implementation 'com.android.support:multidex:1.0.3'
     implementation fileTree(dir: "libs", include: ["*.jar"])
+
     //noinspection GradleDynamicVersion
+    implementation platform('com.google.firebase:firebase-bom:25.12.0')
+    implementation 'com.google.firebase:firebase-analytics'
     implementation "com.facebook.react:react-native:+"  // From node_modules
     implementation 'com.facebook.android:facebook-android-sdk:[5,6)'
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
       exclude group:'com.facebook.fbjni'
     }
@@ -220,3 +226,4 @@ task copyDownloadableDepsToLibs(type: Copy) {
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
+apply plugin: 'com.google.gms.google-services'

@@ -9,9 +9,9 @@ export const loaderSet = (state) => ({
     state
 })
 
-export const toastSet = (state) => ({
+export const toastSet = (text) => ({
     type: TOAST_SET,
-    state
+    text
 })
 
 export const setUser = (user) => ({

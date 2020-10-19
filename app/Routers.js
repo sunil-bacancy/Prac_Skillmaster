@@ -46,12 +46,12 @@ class Routers extends Component {
             <Scene key='root'>
                 <Scene key='splash' component={SplashScreen} hideNavBar={true} initial={true}></Scene>
                 <Scene key='login' component={LoginScreen} hideNavBar={true} ></Scene>
-                <Scene key='signup' component={SignupScreen} hideNavBar={true}></Scene>
-                <Scene key='signupemail' component={SignUpWithEmail} hideNavBar={true} ></Scene>
+                {/* <Scene key='signup' component={SignupScreen} hideNavBar={true}></Scene>
+                <Scene key='signupemail' component={SignUpWithEmail} hideNavBar={true} ></Scene> */}
                 <Scene key='skills' component={SkillScreen} hideNavBar={true}></Scene>
-                <Scene key='learnskills' component={LearnSkillScreen} hideNavBar={true}></Scene>
+                {/* <Scene key='learnskills' component={LearnSkillScreen} hideNavBar={true}></Scene> */}
                 <Scene key='accountsettings' component={AccountSettings} hideNavBar={true}></Scene>
-                <Scene key='privacypolicy' component={PrivacyPolicyScreen} hideNavBar={true}></Scene>
+                {/* <Scene key='privacypolicy' component={PrivacyPolicyScreen} hideNavBar={true}></Scene>
                 <Scene key='stsore' component={StoreScreen} hideNavBar={true} initials></Scene>
                 <Scene key="personalrecords" component={PersonalRecordsScreen} hideNavBar={true}></Scene>
                 <Scene key="familymanagement" component={FamilyManagementScreen} hideNavBar={true}></Scene>
@@ -67,7 +67,7 @@ class Routers extends Component {
                 <Scene key='lessondetail' component={LessonsDetailScreen} hideNavBar={true}></Scene>
                 <Scene key='lessontip' component={LessonTipScreen} hideNavBar={true}></Scene>
                 <Scene key='lessoncompleted' component={LessonCompletedScreen} hideNavBar={true}></Scene>
-                <Scene key='changepassword' component={ChangePasswordScreen} hideNavBar={true}></Scene>
+                <Scene key='changepassword' component={ChangePasswordScreen} hideNavBar={true}></Scene> */}
                 <Scene hideNavBar panHandlers={null}>
                     <Tabs>
                         {/* key="dashboard"
